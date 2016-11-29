@@ -26,13 +26,19 @@ struct SensorDataManager {
         if let x = mx, let y = my, let z = mz {
             mag = MagData(mx: x, my: y, mz: z)
         }
-        let quat = calcQuaternion(accel: accel, gyro: gyro)
+        let quat = calcQuaternion(accel: accel, gyro: gyro, magnet: mag)
         let dataSet = SensorData(_gyro: gyro, _accel: accel, _mag: mag, _quater: quat)
+        
         sensorDataSet.append(dataSet)
     }
     
-    func calcQuaternion(accel: AccelData, gyro: GyroData) -> QuatData{
-        let quaternion = madgwick.madgwickAHRS_IMU(gx: gyro.x, gy: gyro.y, gz: gyro.z, ax: accel.x, ay: accel.y, az: accel.z)
+    func calcQuaternion(accel: AccelData, gyro: GyroData, magnet: MagData?) -> QuatData{
+        let quaternion: Quaternion
+        if let mag = magnet {
+            quaternion = madgwick.madgwickAHRS(gx: gyro.x, gy: gyro.y, gz: gyro.z, _ax: accel.x, _ay: accel.y, _az: accel.z, _mx: mag.x, _my: mag.y, _mz: mag.z)
+        }else{
+            quaternion = madgwick.madgwickAHRS_IMU(gx: gyro.x, gy: gyro.y, gz: gyro.z, ax: accel.x, ay: accel.y, az: accel.z)
+        }
         return QuatData(q0: quaternion.q0, q1: quaternion.q1, q2: quaternion.q2, q3: quaternion.q3)
     }
     

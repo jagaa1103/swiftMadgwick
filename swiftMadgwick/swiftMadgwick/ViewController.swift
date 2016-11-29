@@ -67,8 +67,8 @@ class ViewController: UIViewController {
                 self.motionManager.stopDeviceMotionUpdates()
                 self.showAlert(msg: error.debugDescription)
             }else{
-                if let accelData = data?.gravity, let gyroData = data?.rotationRate {
-                    self.sensorDataManager?.add(ax: accelData.x, ay: accelData.y, az: accelData.z, gx: gyroData.x, gy: gyroData.y, gz: gyroData.z, mx: nil, my: nil, mz: nil)
+                if let accelData = data?.gravity, let gyroData = data?.rotationRate, let magnetData = data?.magneticField.field{
+                    self.sensorDataManager?.add(ax: accelData.x, ay: accelData.y, az: accelData.z, gx: gyroData.x, gy: gyroData.y, gz: gyroData.z, mx: magnetData.x, my: magnetData.y, mz: magnetData.z)
                 }
             }
         })

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/SensorData.swift"
-            timestampString = "502120761.886798"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "calcQuaternion(accel:gyro:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "calcQuaternion(accel:gyro:magnet:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502126571.377921"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502126571.377921"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502126571.377921"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502126571.377921"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502126515.752879"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,7 +106,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502127023.931831"
+            timestampString = "502129698.254126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "swiftMadgwick/swiftMadgwick.swift"
+            timestampString = "502129698.254126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -121,13 +137,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "swiftMadgwick/swiftMadgwick.swift"
-            timestampString = "502127142.211305"
+            filePath = "swiftMadgwick/SensorData.swift"
+            timestampString = "502129702.66532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "madgwickAHRS_IMU(gx:gy:gz:ax:ay:az:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "calcQuaternion(accel:gyro:magnet:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

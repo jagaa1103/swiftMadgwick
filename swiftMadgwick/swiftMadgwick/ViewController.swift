@@ -59,7 +59,9 @@ class ViewController: UIViewController {
                 self.motionManager.stopDeviceMotionUpdates()
                 self.showAlert(msg: error.debugDescription)
             }else{
-                print("accel: \(data?.gravity)")
+                if let accelData = data?.gravity, let gyroData = data?.rotationRate {
+                    print("accel: \(accelData.x), \(accelData.y), \(accelData.z), gyro: \(gyroData.x), \(gyroData.y), \(gyroData.z)")
+                }
             }
         })
     }

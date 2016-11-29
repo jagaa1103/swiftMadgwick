@@ -15,35 +15,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     let motionManager = CMMotionManager()
+    var sensorDataManager: SensorDataManager? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         motionManager.deviceMotionUpdateInterval = 0.01
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
 
     @IBAction func startCalculation(_ sender: Any) {
+        if !checksSensors() {
+            showAlert(msg: "Sensor is not available to testing. Please check your device is supporting gyro and accel sensors!")
+            return
+        }
         if self.motionManager.isDeviceMotionActive {
             return
         }
         if durationTextField.text != nil, durationTextField.text != "" {
+            sensorDataManager = SensorDataManager()
             if let duration = durationTextField.text {
                 Timer.scheduledTimer(withTimeInterval: Double(duration)!, repeats: false, block: { _ in
-                    if self.motionManager.isDeviceMotionActive {
-                        self.motionManager.stopDeviceMotionUpdates()
-                    }else if self.motionManager.isGyroActive {
-                        self.motionManager.stopGyroUpdates()
-                    }else if self.motionManager.isAccelerometerActive {
-                        self.motionManager.stopAccelerometerUpdates()
-                    }
+                    self.stopUpdates()
+                    self.sensorDataManager?.printAllData()
                 })
                 collectMotionData()
             }
@@ -52,6 +51,15 @@ class ViewController: UIViewController {
         }
     }
     
+    func stopUpdates(){
+        if self.motionManager.isDeviceMotionActive {
+            self.motionManager.stopDeviceMotionUpdates()
+        }else if self.motionManager.isGyroActive {
+            self.motionManager.stopGyroUpdates()
+        }else if self.motionManager.isAccelerometerActive {
+            self.motionManager.stopAccelerometerUpdates()
+        }
+    }
     
     func collectMotionData(){
         motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: { (data: CMDeviceMotion?, error: Error?) in
@@ -60,43 +68,18 @@ class ViewController: UIViewController {
                 self.showAlert(msg: error.debugDescription)
             }else{
                 if let accelData = data?.gravity, let gyroData = data?.rotationRate {
-                    print("accel: \(accelData.x), \(accelData.y), \(accelData.z), gyro: \(gyroData.x), \(gyroData.y), \(gyroData.z)")
+                    self.sensorDataManager?.add(ax: accelData.x, ay: accelData.y, az: accelData.z, gx: gyroData.x, gy: gyroData.y, gz: gyroData.z, mx: nil, my: nil, mz: nil)
                 }
             }
         })
     }
     
-    func checksGyro()->Bool{
-        if motionManager.isGyroAvailable {
+    func checksSensors()->Bool{
+        if motionManager.isAccelerometerAvailable,  motionManager.isGyroAvailable {
             return true
         }else{
             return false
         }
-    }
-    
-    func gyroDataCollect(){
-        motionManager.gyroUpdateInterval = 0.01
-        motionManager.startGyroUpdates(to: OperationQueue.main, withHandler: { (data: CMGyroData?, error: Error?) in
-            if error != nil {
-                self.motionManager.stopGyroUpdates()
-                self.showAlert(msg: error.debugDescription)
-            }else{
-                
-                print("\(data?.rotationRate.x), \(data?.rotationRate.y), \(data?.rotationRate.z)")
-            }
-        })
-    }
-    
-    func accelDataCollect(){
-        motionManager.accelerometerUpdateInterval = 0.01
-        motionManager.startAccelerometerUpdates(to: OperationQueue.main, withHandler: { (data: CMAccelerometerData?, error: Error?) in
-            if error != nil {
-                self.motionManager.stopAccelerometerUpdates()
-                self.showAlert(msg: error.debugDescription)
-            } else {
-                print("\(data?.acceleration.x), \(data?.acceleration.y), \(data?.acceleration.z)")
-            }
-        })
     }
     
     func showAlert(msg: String){

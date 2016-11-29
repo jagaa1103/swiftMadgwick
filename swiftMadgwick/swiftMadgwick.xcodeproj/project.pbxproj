@@ -14,6 +14,7 @@
 		110999391DED85C1006C9B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110999371DED85C1006C9B52 /* LaunchScreen.storyboard */; };
 		110999441DED85C1006C9B52 /* swiftMadgwickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110999431DED85C1006C9B52 /* swiftMadgwickUITests.swift */; };
 		1109994F1DED85DF006C9B52 /* swiftMadgwick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109994E1DED85DF006C9B52 /* swiftMadgwick.swift */; };
+		110999511DED9E20006C9B52 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110999501DED9E20006C9B52 /* SensorData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		110999431DED85C1006C9B52 /* swiftMadgwickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftMadgwickUITests.swift; sourceTree = "<group>"; };
 		110999451DED85C1006C9B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1109994E1DED85DF006C9B52 /* swiftMadgwick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swiftMadgwick.swift; sourceTree = "<group>"; };
+		110999501DED9E20006C9B52 /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				110999371DED85C1006C9B52 /* LaunchScreen.storyboard */,
 				1109993A1DED85C1006C9B52 /* Info.plist */,
 				1109994E1DED85DF006C9B52 /* swiftMadgwick.swift */,
+				110999501DED9E20006C9B52 /* SensorData.swift */,
 			);
 			path = swiftMadgwick;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				110999311DED85C1006C9B52 /* ViewController.swift in Sources */,
 				1109994F1DED85DF006C9B52 /* swiftMadgwick.swift in Sources */,
 				1109992F1DED85C1006C9B52 /* AppDelegate.swift in Sources */,
+				110999511DED9E20006C9B52 /* SensorData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
